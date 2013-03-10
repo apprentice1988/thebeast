@@ -4,29 +4,32 @@ describe HelpPagesController do
 
   subject {page}
 
-  describe "faq page" do
-    before {visit faq_path}
-
-    it {should have_selector('h5', text: "Q：为什么我收到的花跟网上的图片不太一样？")}
-  end
-
-  describe "newbieguide page" do
-    before {visit newbieguide_path}
-
-    it {should have_selector('h5', text: "新用户注册)}
+  describe "GET 'faq'" do
+    it "returns http success" do
+      get 'faq'
+      response.should be_success
     end
   end
 
-  describe "afterservice page" do
-    before {visit afterservice_path}
-
-    it {should have_selector('h5', text: "投诉方式")}
+  describe "GET 'newbieguide'" do
+    it "returns http success" do
+      get 'newbieguide'
+      response.should be_success
+    end
   end
 
-  describe "shippingintro page" do
-    before {visit afterservice_path}
+  describe "GET 'afterservice'" do
+    it "returns http success" do
+      get 'afterservice'
+      response.should be_success
+    end
+  end
 
-    it {should have_selector('h5', text: "投诉方式")}
+  describe "GET 'shippingintro'" do
+    it "returns http success" do
+      get 'shippingintro'
+      response.should be_success
+    end
   end
 
   describe "GET 'privacy'" do
@@ -42,12 +45,4 @@ describe HelpPagesController do
       response.should be_success
     end
   end
-
-  describe "GET 'about'" do
-    it "returns http success" do
-      get 'about'
-      response.should be_success
-    end
-  end
-
 end

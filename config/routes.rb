@@ -1,4 +1,36 @@
 Thebeast::Application.routes.draw do
+  root :to => 'static_pages#home'
+
+  match 'faq' => 'help_pages#faq'
+
+  match 'newbieguide' => 'help_pages#newbieguide'
+
+  match 'afterservice' => 'help_pages#afterservice'
+
+  match 'shippingintro' => 'help_pages#shippingintro'
+
+  match 'privacy' => 'help_pages#privacy'
+
+  match 'contact' => 'help_pages#contact'
+
+  match 'about' => 'help_pages#about'
+
+  match 'newproduct' => 'static_pages#newproduct'
+
+  match 'beastflower' => 'static_pages#beastflower'
+
+  match 'fragrance' =>  "static_pages#fragrance"
+
+  match 'clothes' => "static_pages#clothes"
+
+  match 'grocery' => "static_pages#grocery"
+
+  match 'gift' => "static_pages#gift"
+
+  match 'cooperation' => "static_pages#cooperation"
+
+  match 'story' => "static_pages#story"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Thebeast</title>
+  <title>野兽派-The Beast Shop</title>
+  <link rel="shortcut icon" href="http://statics.thebeastshop.com/skin/frontend/default/default/favicon.ico" type="image/x-icon" />
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
-<%= yield %>
-
+	<%= render 'layouts/header' %>
+	<div class='container'>
+		<div class='row'>
+			<div class='span2'><%= bar(yield(:bar)) %></div>
+			<div class='span8 content'>
+				<%= yield %>
+				<%= render 'layouts/footer' %>
+			<div class='span2'></div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

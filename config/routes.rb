@@ -1,5 +1,22 @@
 Thebeast::Application.routes.draw do
+  
+  resources :users
+
   root :to => 'static_pages#home'
+  
+  match 'basicinfo' => 'accounts#basicinfo'
+
+  match 'deliveraddress' => "accounts#deliveraddress"
+
+  match 'orders' => "accounts#ordersinfo"
+
+  match 'subscription' => "accounts#subscriptioninfo"
+
+  match 'invitation' => "accounts#myinvitation"
+
+  match 'cancelapplication' => "accounts#cancelapplication"
+
+  match "signup" => 'users#new'
 
   match 'faq' => 'help_pages#faq'
 

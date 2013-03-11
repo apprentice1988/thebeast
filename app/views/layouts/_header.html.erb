@@ -1,4 +1,4 @@
-<div class="navbar navbar-static-top">
+<div class="navbar navbar-fixed-top">
 <div class="navbar-inner">
   <div class="container">
      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -9,12 +9,13 @@
     <%=link_to "The BEAST 野兽派", root_path, :class => 'brand' %>
     <div class="nav-collapse collapse">
       <ul class='nav nav-pills'>
-        <li><%= link_to "欢迎来到 THE BEAST 野兽派！",'#' %></li>
-      	<li><%= link_to "Browse Products" %></li>
-        <li><%= link_to "Price List" %></li>
+        <li><%= link_to "欢迎来到 THE BEAST 野兽派！"%></li>
+      	<li><%= link_to "我的野兽派" %></li>
+        <li><%= link_to "注册", signup_path %></li>
         <li><%= link_to "联系我们", contact_path%></li>
         <li><%= link_to "帮助中心", faq_path %></li>
       </ul>
     </div>
    </div>
+</div>
 </div>

@@ -1,5 +1,7 @@
 module ApplicationHelper
 	def bar(sidebar)
-		render "shared/#{sidebar}"
+		unless sidebar.empty?
+			render "shared/#{sidebar}"
+		end
 	end
 end

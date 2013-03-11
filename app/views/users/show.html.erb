@@ -1,0 +1,41 @@
+<% provide(:bar, 'accountsleftbar') %>
+<small><strong>您好，<%= @user.username %></strong></small><br/>
+<small>您可以选择下面的链接查看或编辑信息。</small>
+<br/><br/>
+
+<div class='row-fluid'>	
+	<div class='span6'>
+		<div class='row-fluid'>
+			<div class='span6'>
+				<h6>基本信息</h6>
+				<small><%= @user.username %></small><br/>
+				<small><%= @user.email %></small><br/>
+				<small><%= @user.mobilephone %></small><br/>
+				<small><%= link_to "更多信息" %></small>
+			</div>
+			<div class='span6 text-center'>
+				<small><%= link_to "编辑" %></small>
+			</div>
+		</div>
+		<br/>	
+	</div>
+	<div class='span6'> 
+		<div class='row-fluid'>
+			<div class='span6'>
+				<h6>订阅最新特惠信息</h6>
+				<small>
+					<% if @user.subscription %>
+					您已经订阅了最新特惠信息。
+					<% else %>
+					您还没有订阅最新特惠信息。
+					<% end %>
+				</small>
+			</div>
+			<div class='span6 text-center'>
+				<small><%= link_to '编辑' %></small>
+			</div>
+		</div>
+	</div>
+</div>
+
+

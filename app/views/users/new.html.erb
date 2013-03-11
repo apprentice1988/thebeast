@@ -1,0 +1,62 @@
+<div class='row'>
+  <div class='span5 offset1 '>
+      <h3 class= 'text-center offset1'>注册</h3>
+      <small class='offset2'>建立My Beast帐户，*代表必填内容</small><br/><br/>
+
+    <%= form_for @user, html: {class: "form-horizontal"} do |f| %>
+      <%= render 'shared/error_messages'%>
+
+      <div class="control-group">
+        <%= f.label :username,"用户名* :", class: 'control-label' %>
+        <div class='controls'>
+          <%= f.text_field :username %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :email,'电子邮箱* :', class: "control-label" %>
+        <div class='controls'>
+          <%= f.text_field :email %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :fixlinephone, '固定电话 :', class: "control-label" %>
+        <div class='controls'>
+          <%= f.text_field :fixlinephone %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :mobilephone, '手机* :', class: "control-label" %>
+        <div class='controls'>
+          <%= f.text_field :mobilephone %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="controls">
+        <%= f.check_box :subscription %> 
+        <small>订阅最新特惠信息</small>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :password, "密码 :", class: "control-label" %>
+        <div class='controls'>
+          <%= f.password_field :password %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :password_confirmation, "确认密码 :", class: "control-label" %>
+        <div class='controls'>
+          <%= f.password_field :password_confirmation %>
+        </div>
+      </div>
+      <div class='span4 offset1'>
+        <%= f.submit "提交", class: "btn  btn-primary btn-block" %>
+      </div>
+    <% end %>
+  </div>
+</div>

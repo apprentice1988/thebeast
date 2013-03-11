@@ -1,3 +1,11 @@
+/* mixins, variables, etc. */
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
 /* universal */
 
 html {
@@ -51,16 +59,62 @@ p {
 
 
 .leftbar {
-	padding-top: 30px;
+	padding-top: 20px;
 	margin: 30px;
 }
 .helpleftbar {
-	padding-top: 35px;
+	padding-top: 25px;
 	margin: 25px;
 }
+
+.accountsleftbar {
+  padding-top: 25px;
+  margin: 25px;
+}
+
 .content {
-	padding-top: 60px;
+	padding-top: 40px;
 }
 .footer {
 	margin-top: 50px;
 }
+
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  padding-left:100px;
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+ }

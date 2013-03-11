@@ -17,9 +17,11 @@
 			<div class='span8 content'>
 				<%= yield %>
 				<%= render 'layouts/footer' %>
-			<div class='span2'></div>
 			</div>
+			<div class='span2'>
+			</div>	
 		</div>
+		<%= debug(params) if Rails.env.development? %>
 	</div>
 </body>
 </html>

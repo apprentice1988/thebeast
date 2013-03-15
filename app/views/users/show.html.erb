@@ -11,10 +11,10 @@
 				<small><%= @user.username %></small><br/>
 				<small><%= @user.email %></small><br/>
 				<small><%= @user.mobilephone %></small><br/>
-				<small><%= link_to "更多信息" %></small>
+				<small><%= link_to "更多信息", edit_user_path(current_user) %></small>
 			</div>
 			<div class='span6 text-center'>
-				<small><%= link_to "编辑" %></small>
+				<small><%= link_to "编辑", edit_user_path(current_user) %></small>
 			</div>
 		</div>
 		<br/>	

@@ -1,0 +1,26 @@
+<% provide(:bar, 'leftbar') %>
+<div class='row'>
+<div class='span7'>
+<p id="notice"><%= notice %></p>
+ <%= image_tag 'clock.jpg' %>
+</div>
+<div class='span3'>
+<h3>
+  <%= @product.title %>
+</h3>
+<p>
+  <%= @product.price %>
+</p>
+<p>
+  <b>商品详情：:</b>
+  <%= @product.description %>
+</p>
+
+
+
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+</div>
+</div>

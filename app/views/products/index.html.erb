@@ -1,0 +1,24 @@
+<h1>Listing products</h1>
+<table class="text-left">
+  <tr class='row'>
+    <th class='span4'><h5>Title</h5></th>
+    <th class='span3'><h5>Price</h5></th>
+    <th class='span1'></th>
+    <th class='span1'></th>
+    <th class='span1'></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr class='row'>
+    <td class='span4'><%= product.title %></td>
+    <td class='span3'><%= product.price %></td>
+    <td class='span1'><%= link_to 'Show', product %></td>
+    <td class='span1'><%= link_to 'Edit', edit_product_path(product) %></td>
+    <td class='span1'><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Product', new_product_path %>

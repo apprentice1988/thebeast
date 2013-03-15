@@ -1,5 +1,8 @@
 Thebeast::Application.routes.draw do
   
+  resources :products
+
+
   resources :users
 
   resources :sessions, only: [:new, :create, :destroy]
@@ -9,8 +12,6 @@ Thebeast::Application.routes.draw do
   match 'signin' => 'sessions#new'
 
   match 'signout' => 'sessions#destroy', via: :delete
-  
-  match 'basicinfo' => 'accounts#basicinfo'
 
   match 'deliveraddress' => "accounts#deliveraddress"
 

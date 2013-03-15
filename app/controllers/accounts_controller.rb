@@ -1,6 +1,4 @@
 class AccountsController < ApplicationController
-  def basicinfo
-  end
 
   def deliveraddress
   end

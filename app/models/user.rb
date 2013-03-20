@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :fixlinephone, :mobilephone, :username, :password, :password_confirmation, :subscription, :province,
                   :city, :zone, :address, :postcode
+  has_one :cart, dependent: :destroy
 
   has_secure_password
 

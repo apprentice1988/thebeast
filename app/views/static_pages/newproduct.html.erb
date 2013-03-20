@@ -1,3 +1,10 @@
-<% provide(:bar, 'leftbar') %>
-<h1>StaticPages#newproduct</h1>
-<p>Find me in app/views/static_pages/newproduct.html.erb</p>
+<div class="imagebox">
+	<div class='imagecontainer'>
+		<% @products.each  do |product| %>
+			<div><%= link_to(product_path(product)) do %>
+				<%= image_tag(product.photo_url, class: "image") %>
+				<p><%= product.title %></p>
+			<% end %></div>
+		<% end %>
+	</div>
+</div>

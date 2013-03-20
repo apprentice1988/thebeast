@@ -16,6 +16,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :ftag, "类别" %>
+    <%= f.select :ftag,  "<option>flower</option><option>perfume</option><option>dress</option><option>grocery</option><option>cooperation</option>".html_safe %>
+  </div>
+  <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
@@ -24,10 +28,32 @@
     <%= f.text_field :image_url %>
   </div>
   <div class="field">
+    <%= f.label :image_url1 %><br />
+    <%= f.text_field :image_url1 %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url2 %><br />
+    <%= f.text_field :image_url2 %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url3 %><br />
+    <%= f.text_field :image_url3 %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url4 %><br />
+    <%= f.text_field :image_url4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :photo_url %><br />
+    <%= f.text_field :photo_url %>
+  </div>
+
+  <div class="field">
     <%= f.label :price %><br />
     <%= f.text_field :price %>
   </div>
-  <div class="actions">
+  <div class="actions offset4">
     <%= f.submit %>
   </div>
 <% end %>

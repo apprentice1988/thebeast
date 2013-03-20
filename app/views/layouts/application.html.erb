@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html  class="ua-ff4" lang="zh-CN">
 <head>
-  <title>野兽派-The Beast Shop</title>
-  <link rel="shortcut icon" href="http://statics.thebeastshop.com/skin/frontend/default/default/favicon.ico" type="image/x-icon" />
+  <title>乐子_Just For Fun</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
+  <%= favicon_link_tag 'favicon.ico'%>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<%= render 'layouts/header' %>
-	<div class='container'>
-		<div class='row'>
-			<div class='span2'><%= bar(yield(:bar)) %></div>
-			<div class='span10 content'>
-				<%= yield %>
-				<%= render 'layouts/footer' %>
-			</div>
-		</div>
-		<%= debug(params) if Rails.env.development? %>
-	</div>
+  <%= render 'layouts/header' %>
+  <%= yield %>
+  <footer>
+    <%= render 'layouts/footer' %>
+  </footer>
+    <%= debug(params) if Rails.env.development? %>
 </body>
 </html>

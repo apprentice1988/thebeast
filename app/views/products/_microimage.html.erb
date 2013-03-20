@@ -1,0 +1,4 @@
+<% @microimages.each do |microimage| %>
+	<% @id = microimage[-6..-5] %>
+	<%= image_tag(microimage, id: @id) %>
+<% end %>

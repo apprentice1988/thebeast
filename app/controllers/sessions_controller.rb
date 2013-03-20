@@ -9,10 +9,10 @@ class SessionsController < ApplicationController
 			sign_in user
 			redirect_to root_path
 		elsif user 
-			flash.now[:error] = 'Password is wrong'
+			flash[:error] = 'Password is wrong'
 			render 'new'
 		else
-			flash.now[:error] = 'This email is unvalid'
+			flash[:error] = 'This email is unvalid'
 			render 'new'
 		end
 	end

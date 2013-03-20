@@ -1,0 +1,45 @@
+<% provide(:bar, 'leftbar') %>
+<div class='row-fluid'>
+  <div class='span9'>
+    <p id="notice"><%= notice %></p>
+
+    <table class='table table-striped table-condensed', id="credit">
+      <tr>
+        <th><p>商品</p></th>
+        <th><p>商品说明</p></th>
+        <th><p>价格</p></th>
+        <th><p>数量</p></th>
+        <th><p>小计</p></th>
+        <th><p>操作</p></th>
+      </tr>
+
+      <% @line_items.each do |line_item| %>
+        <tr id="credittable", data-price="<%= Product.find(line_item[:product_id]).price %>">
+          <td><%= image_tag(Product.find(line_item[:product_id]).photo_url, :id => "litphoto",
+              alt: Product.find(line_item[:product_id]).title) %></td>
+          <td><p><%= Product.find(line_item[:product_id]).title %></p></td>
+          <td><p><%= Product.find(line_item[:product_id]).price %></p></td>
+          <td><p><input id = 'quantity'  placeholder="1" remote: true /></p></td>
+          <td id = 'total'><p><%=Product.find(line_item[:product_id]).price %></p></td>
+          <td><p><%= link_to '取消', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></p></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><h4>总计: 0</h4></td>
+        <td><h4>立即结算</h4></td>  
+      </tr>     
+    </table>
+
+
+    <div class='nav center inline'>
+    <h5><%= link_to '结帐', edit_cart_path(@cart)%> <%= link_to '清空', cart_path(@cart), method: :delete, confirm: '确定清空购物车？' %> <%= link_to '继续逛', root_path %></h5>
+    </div>
+    <div class='span3'></div>
+  </div>
+</div>
+
+

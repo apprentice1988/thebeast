@@ -11,15 +11,47 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130315022606) do
+ActiveRecord::Schema.define(:version => 20130320071538) do
+
+  create_table "carts", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "products", :force => true do |t|
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.decimal  "price",       :precision => 8, :scale => 0
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.integer  "price",       :limit => 8
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "photo_url"
+    t.string   "image_url1"
+    t.string   "image_url2"
+    t.string   "image_url3"
+    t.string   "image_url4"
+    t.string   "ftag"
+  end
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -27,8 +59,8 @@ ActiveRecord::Schema.define(:version => 20130315022606) do
     t.string   "email"
     t.string   "fixlinephone"
     t.string   "mobilephone"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "password_digest"
     t.boolean  "subscription"
     t.string   "province"
@@ -37,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20130315022606) do
     t.string   "address"
     t.integer  "postcode"
     t.string   "remember_token"
+    t.boolean  "admin",           :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

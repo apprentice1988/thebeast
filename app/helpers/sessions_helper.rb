@@ -13,7 +13,11 @@ module SessionsHelper
 	end
 
 	def current_user
-		@current_user ||= User.find_by_remember_token(cookies[:remember_token])
+		begin
+			@current_user ||= User.find_by_remember_token(cookies[:remember_token])
+		rescue Exception
+			nil
+		end
 	end
 
 	def current_user?(user)

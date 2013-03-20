@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-
+    @microimages = [@product.image_url1, @product.image_url2, @product.image_url3, @product.image_url4].select {|x| !x.blank? }
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
@@ -25,7 +25,6 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @product }
@@ -41,7 +40,6 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(params[:product])
-
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }

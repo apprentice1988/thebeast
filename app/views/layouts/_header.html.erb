@@ -1,26 +1,25 @@
-<div class="navbar navbar-fixed-top">
-<div class="navbar-inner">
-  <div class="container">
-     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </a>
-    <%=link_to "The BEAST 野兽派", root_path, :class => 'brand' %>
-    <div class="nav-collapse collapse">
-      <ul class='nav nav-tabs'>
-        <% if sign_in? %>
-          <li class='nav-text'>你好呀, <%= current_user.username %></li>
-          <li><%= link_to "我的野兽派", user_path(current_user) %></li>
-          <li><%= link_to "退出", signout_path, method: "delete" %></li>
-        <% else %>
-          <li class='nav-text'>欢迎来到 THE BEAST 野兽派！</li>
-          <li><%= link_to "注册", signup_path %></li>
-          <li><%= link_to "登录", signin_path %></li>
-        <% end %>
+<header>
+    <%= image_tag("logo.jpg", :size => "240x150") %>
+    <form>
+      <input type="text" class="input-medium search-query">
+      <input type="submit" name='submit' id='submit'  class="submit" value='Search'>
+    </form>
+    <div id='user_panel'>
+      <%= link_to "登录", signup_path %>
+      <%= link_to "注册", signin_path %>
+    </div>
+  </header>
+  <div class='wrapper'>
+    <nav class='menu'>
+      <ul class='left'>
+        <li><%= link_to "首页", root_path%></li>
+        <li><%= link_to "最新产品", newproduct_path%></li> 
+        <li><%= link_to "野兽派花店", beastflower_path %></li> 
+        <li><%= link_to "香氛沙龙", fragrance_path %></li> 
+        <li><%= link_to "服饰配件", clothes_path %></li> 
+        <li><%= link_to "杂货铺", grocery_path %></li> 
+        <li><%= link_to "特别合作", cooperation_path %></li>
         <li><%= link_to "帮助中心", faq_path %></li>
       </ul>
-    </div>
-   </div>
-</div>
-</div>
+    </nav>
+  </div> 

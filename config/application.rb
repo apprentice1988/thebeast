@@ -61,6 +61,7 @@ module Thebeast
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    #config.assets.path << Rails.root.join("app", "assets", "font")
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

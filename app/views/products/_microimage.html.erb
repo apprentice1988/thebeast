@@ -1,4 +1,5 @@
-<% @microimages.each do |microimage| %>
-	<% @id = microimage[-6..-5] %>
-	<%= image_tag(microimage, id: @id) %>
+<ul id="imgList">
+<% @img.each do |microimage| %>
+	<li class='microimage'><%= image_tag microimage %></li>
 <% end %>
+</ul>

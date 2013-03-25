@@ -13,6 +13,8 @@ Thebeast::Application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
+  resources :likes
+
   root :to => 'static_pages#home'
 
   match 'signin' => 'sessions#new'
@@ -30,6 +32,8 @@ Thebeast::Application.routes.draw do
   match 'cancelapplication' => "accounts#cancelapplication"
 
   match "signup" => 'users#new'
+
+  match "like" => 'users#like'
 
   match 'faq' => 'help_pages#faq'
 

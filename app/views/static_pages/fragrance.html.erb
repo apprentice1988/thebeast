@@ -1,10 +1,24 @@
 <div class="imagebox">
 	<div class='imagecontainer'>
 		<% @products.each  do |product| %>
-			<div><%= link_to(product_path(product)) do %>
-				<%= image_tag(product.photo_url, class: "image") %>
-				<p><%= product.title %></p>
-			<% end %></div>
+			<div class='one-pro'>	
+				<div class='one-pro-inner'>
+					<div class='photo'>
+						<%= link_to(product_path(product)) do %>
+							<% @id = product.id %>
+							<%= image_tag(product.photo_url, :id => @id) %>	
+						<% end %>
+					</div>
+					<div class='like'>
+						<%= link_to raw("<span class=\"likeinner\"><i class=\"icon-heart\"></i></span>"), likes_path(product_id: product.id), method: :post, remote: true %>
+						<span class='likecount'><%= product.users.count %></span>
+					</div>
+				</div>
+				<div class='spec'><span class='protitle'><%=link_to product.title, product_path(product) %></span><span class='proprice'><%= product.price %> ￥</span></div>
+
+			</div>
 		<% end %>
 	</div>
+	<%= javascript_include_tag "custom/product-like.js" %>
 </div>
+

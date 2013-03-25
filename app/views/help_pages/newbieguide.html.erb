@@ -1,4 +1,7 @@
 <% provide(:bar, 'helpleftbar') %>
+<div class='row-fluid'>
+<div class='span2'><%= bar(yield(:bar)) %></div>
+<div class='span8'>
 <h5>————新用户注册————</h5>
 <br/>
 <small><%= link_to "点击这里进入注册页面", '#' %></small>
@@ -42,3 +45,6 @@
 <h5>————忘记密码————</h5>
 <br/>
 <small><%=link_to "点击这里重新设置密码", '#' %></small>
+</div>
+<div class='span2'></div>
+</div>

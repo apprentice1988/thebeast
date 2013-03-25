@@ -2,9 +2,9 @@ module CartsHelper
 
 	def current_cart
 		begin
-	  @current_cart ||= User.find_by_remember_token(cookies[:remember_token]).cart
-  	rescue Exception
-  		nil
- 	  end
- 	end
+	  	 @current_cart = Cart.find(cookies[:cart_id]) || current_user.cart 
+	  rescue Exception
+	  	current_cart = nil
+	  end
+ 	end 	
 end

@@ -1,4 +1,7 @@
 <% provide(:bar, 'helpleftbar') %>
+<div class='row-fluid'>
+<div class='span2'><%= bar(yield(:bar)) %></div>
+<div class='span8'>
 <small>————配送范围和时间————</small>
 <br/><br/><br/>
 <small><strong>野兽派售出的所有商品一律免费包邮。</strong><small><br/><br/>
@@ -51,3 +54,6 @@
 <small>B 在未联系到收货人情况下，顾客仍要求继续配送；</small><br/>
 
 <small>C 按照要求的地址和时间配送到时，无法联系到收货人；</small>
+</div>
+<div class='span2'></div>
+</div>

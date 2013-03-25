@@ -1,17 +1,21 @@
-#proimg {
-	img {
-	width:570px;
-	margin-left: 120px;
-	}
+#bigImg {
+	img{width: 600px;
+	margin-left: 40px;}
+}
+#imgtitle {
+	margin-left: 40px;
 }
 #proinfo {
-	padding-left: 115px;
-	padding-right: 10px;
+	padding-left: 40px;
 }
-#microimage {
+#imgList {
 	padding-left: 0;
-	img {
-		width: 60px;
-		margin:3px;
+	li {
+		float: left;
+		list-style: none;
+		img {
+			width: 60px;
+			margin-bottom:3px;
+		}
 	}
 }

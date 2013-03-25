@@ -1,0 +1,1 @@
+$("#<%= @product.id %>").closest(".photo").next().find('.likecount').text(<%= @product.users.count %>)

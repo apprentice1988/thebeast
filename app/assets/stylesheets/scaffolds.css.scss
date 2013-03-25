@@ -10,7 +10,8 @@ overflow-x: hidden;
 diaplay: block;
 }
 .notice {
-  padding-left:77px;
+  padding-left:190px;
+  font-size: 15px;
 }
 
 p, ol, td, th, a {
@@ -81,21 +82,80 @@ div {
   -o-column-gap:15px;
   text-align:center;
   width:80%;}
-.imagecontainer div {
-  border-radius:5px;//圆角
-  background:#ffffff;
-  border:#ccc 1px solid;
+.imagecontainer div.photo {
   display:inline-block;
-  width:224px;
-  position:relative;
-  text-align:center;
-  margin-bottom:10px;
-  padding:3px;
+  width:222px;
+  padding-top:4px;
+  margin-bottom: 5px;
+  img {
+  margin-bottom: 10px;
+  }
+}
+.imagecontainer div.spec {
+  height: 25px;
+  margin-top: -15px;
+  .protitle {
+    float: left;
+    margin-left: 7px;
+  }
+  .proprice {
+    float: right;
+    margin-right: 7px;
+  }
+}
+.imagecontainer div.one-pro {
+  display: inline-block;
+  background-color: #fff;
+  margin-bottom: 28px;
+  width: 230px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, .1);
+  -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
+  div.one-pro-inner {
+  padding-top: 0;
+  }
+
 }
 
+.imagecontainer div.like {
+  background: none;
+  display: none;
+  width: 25px;
+  height: 25px;
+  color: #d9666f;
+
+  a:hover {
+    span.likeinner {
+    background: #d9666f;
+    color: #fff;
+    }
+    }
+  span.likeinner {
+    border-radius: 15px;
+    background: #fff;
+    padding: 1px 2px 0 1px;
+  }
+}
+.imagecontainer div.unlike {
+  background: none;
+  display: none;
+  width: 25px;
+  height: 25px;
+}
 
 .imagecontainer div p { padding:0px 10px 0px 10px; margin:0px; line-height:25px; text-align:left; font-size:12px;}
 
 .imagecontainer div a {
   color:#d9666f;
+}
+
+.imagecontainer .spec {
+  a {
+  color: #666;
+  }
+  .proprice {
+  color:#78c042;
+  font-size:14px;
+  }
 }

@@ -40,7 +40,12 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    if sign_in?
+    if current_cart.nil?
+      @cart = Cart.create(params[:cart])
+      cookies[:cart_id] = { :value => @cart.id , :expires => 1.hour.from_now }
+      @line_items = LineItem.create(product_id: params[:product_id], cart_id: @cart.id)
+      redirect_to cart_path(@cart)
+    else
       @cart = current_cart
       current_item = @cart.line_items.find_by_product_id(params[:product_id])
       if current_item
@@ -51,10 +56,6 @@ class LineItemsController < ApplicationController
         @line_item.save
         redirect_to cart_path(@cart)
       end
-    else 
-      @cart = Cart.create(params[:cart])
-      @line_items = LineItem.create(product_id: params[:product_id], cart_id: @cart.id)
-      redirect_to cart_path(@cart)
     end
   end
    
@@ -67,10 +68,8 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       if @line_item.update_attributes(params[:line_item])
         format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { redirect_to(:back) }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
   end

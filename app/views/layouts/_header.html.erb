@@ -1,25 +1,63 @@
 <header>
-    <%= image_tag("logo.jpg", :size => "240x150") %>
-    <form>
-      <input type="text" class="input-medium search-query">
-      <input type="submit" name='submit' id='submit'  class="submit" value='Search'>
-    </form>
-    <div id='user_panel'>
-      <%= link_to "登录", signup_path %>
-      <%= link_to "注册", signin_path %>
+  <%= image_tag("logo.jpg", :size => "240x150") %>
+  <form>
+    <input type="text" class="input-medium search-query">
+    <input type="submit" name='submit' id='submit'  class="submit" value='Search'>
+  </form>  
+</header>
+<div class='wrapper'>
+  <nav class='menu'>
+    <ul class='left'>
+      <li><%= link_to "首页", root_path%></li>
+      <li><%= link_to "最新产品", newproduct_path%></li> 
+      <li><%= link_to "野兽派花店", beastflower_path %></li> 
+      <li><%= link_to "香氛沙龙", fragrance_path %></li> 
+      <li><%= link_to "服饰配件", clothes_path %></li> 
+      <li><%= link_to "杂货铺", grocery_path %></li> 
+      <li><%= link_to "特别合作", cooperation_path %></li>
+      <li><%= link_to "帮助中心", faq_path %></li>
+    </ul>
+    <div class='right'>
+      <% if sign_in? %>
+      <div class='cogs'>
+        <div id ='signout'>
+          <a class='dropdown-toggle' data-toggle = "dropdown" href='#'><i class = 'icon-cogs icon-2x transparent'></i></a>
+        </div>
+        <ul class='cogs-dropdown-menu'>
+          <li><a tabindex="-1" href="#"><i class="icon-pencil"></i>个人信息</a></li>
+          <li><%= link_to raw("<i class=\"i\"></i>退出"), signout_path %></li>
+        </ul>
+      </div>
+      <% else %>
+        <%= link_to signin_path do %>
+          <div id='signin'>
+            <i class = 'icon-signin icon-2x transparent'></i>
+          </div>
+        <% end %>
+      <% end %>
+      <% if current_user %>
+        <%= link_to like_path(current_user) do %>
+          <div class='heart'>
+            <i class='icon-heart icon-2x transparent'></i>
+          </div>
+        <% end %>
+      <% else %>
+        <%= link_to signin_path do %>
+          <div class='heart'>
+            <i class='icon-heart icon-2x transparent'></i>
+          </div>
+        <% end %>
+      <% end %>
+      <% if current_cart.nil? %>
+        <div id="cart">
+          <i class='icon-shopping-cart icon-2x transparent'></i></div><div class='count'>0</div>
+      <% else %>
+        <%= link_to cart_path(current_cart) do %>
+          <div id="cart">
+          <i class='icon-shopping-cart icon-2x transparent'></i></div><div class='count'><%= current_cart.line_items.count %></div>
+        <% end %>
+      <% end %>
     </div>
-  </header>
-  <div class='wrapper'>
-    <nav class='menu'>
-      <ul class='left'>
-        <li><%= link_to "首页", root_path%></li>
-        <li><%= link_to "最新产品", newproduct_path%></li> 
-        <li><%= link_to "野兽派花店", beastflower_path %></li> 
-        <li><%= link_to "香氛沙龙", fragrance_path %></li> 
-        <li><%= link_to "服饰配件", clothes_path %></li> 
-        <li><%= link_to "杂货铺", grocery_path %></li> 
-        <li><%= link_to "特别合作", cooperation_path %></li>
-        <li><%= link_to "帮助中心", faq_path %></li>
-      </ul>
-    </nav>
-  </div> 
+  </nav>
+  <%= javascript_include_tag 'custom/menu-right.js' %>
+</div> 

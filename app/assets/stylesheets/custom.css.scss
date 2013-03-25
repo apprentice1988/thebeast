@@ -58,13 +58,9 @@ p {
 }
 
 
-.leftbar {
-	padding-top: 20px;
-	margin: 30px;
-}
+
 .helpleftbar {
-	padding-top: 25px;
-	margin: 25px;
+	margin: 5px 0 20px 40px;
 }
 
 .accountsleftbar {
@@ -81,8 +77,11 @@ p {
   margin-top:60px;
   }
 }
-.footer {
+footer {
 	margin-top: 50px;
+  .inline{
+  margin-bottom: 0;
+  }
 }
 
 
@@ -108,7 +107,7 @@ input, textarea,  .uneditable-input {
 }
 
 input {
-  height: auto !important;
+  border-radius: 5px;
 }
 
 #error_explanation {
@@ -120,29 +119,4 @@ input {
   }
 }
 
- #credit {
-  tr{
-    th {
-      p {
-      text-align: center;
-      }
-    }
-    td {
-      width: 150px;
-      vertical-align: middle;
-      img {
-      width: 80px;
-      height:80px;
-      padding-left:8px;
-      }
-      p {
-        text-align: center;
-        padding-top: 20px;
-      }
-      h4 {
-        text-align: center;
-      }
-    }
-    
-  }
- }
+ 

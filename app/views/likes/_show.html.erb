@@ -1,0 +1,21 @@
+<div class="imagebox">
+	<div class='imagecontainer'>
+		<% @likes.each  do |like| %>
+			<div class='one-pro'>	
+				<div class='one-pro-inner'>
+					<div class='photo'>
+						<%= link_to(product_path(Product.find(like.product_id))) do %>
+						<% @id = like.product_id %>
+							<%= image_tag(Product.find(like.product_id).photo_url, :id => @id) %>	
+						<% end %>
+					</div>
+					<div class='unlike'>
+						<%= link_to raw("<i class=\"icon-remove-sign\"></i>"), like_path(like), method: :delete %>
+					</div>
+				</div>
+				<div class='spec'><span class='protitle'><%=link_to Product.find(like.product_id).title, product_path(Product.find(like.product_id)) %></span><span class='proprice'><%= Product.find(like.product_id).price %> ￥</span></div>
+			</div>
+		<% end %>
+	</div>
+	<%= javascript_include_tag "custom/product-unlike" %>
+</div>

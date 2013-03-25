@@ -4,4 +4,10 @@ class LineItem < ActiveRecord::Base
   validates :cart_id, presence: true
   belongs_to :product 
   belongs_to :cart
+
+  begin
+  	[].line_items
+  rescue Exception
+  	0
+  end
 end

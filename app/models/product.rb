@@ -3,6 +3,8 @@ class Product < ActiveRecord::Base
   has_many :line_items
   has_one  :tagging
   has_one  :tag, :through => :tagging
+  has_many :likes, dependent: :destroy
+  has_many :users, through: :likes
   validates :description, presence: true
   validates :image_url, presence: true
   validates :price, presence: true

@@ -12,4 +12,7 @@ class Product < ActiveRecord::Base
 
   scope :tag_with, lambda{|tag_name| joins(:tags).where("tags.name = ?", tag_name)}
   
+  searchable do 
+    text :title, :description
+  end
 end

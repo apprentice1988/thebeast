@@ -1,24 +1,27 @@
-<h1>Listing products</h1>
-<table class="text-left">
-  <tr class='row'>
-    <th class='span4'><h5>Title</h5></th>
-    <th class='span3'><h5>Price</h5></th>
-    <th class='span1'></th>
-    <th class='span1'></th>
-    <th class='span1'></th>
-  </tr>
+<div class="imagebox">
+  <div class='imagecontainer'>
+    <% @products.each  do |product| %>
+      <div class='one-pro'> 
+        <div class='one-pro-inner'>
+          <div class='photo'>
+            <%= link_to(product_path(product)) do %>
+              <% @id = product.id %>
+              <%= image_tag(product.photo_url, :id => @id) %> 
+            <% end %>
+          </div>
+          <div class='like'>
+            <% if current_user %>
+              <%= link_to raw("<span class=\"likeinner\"><i class=\"icon-heart\"></i></span>"), likes_path(product_id: product.id), method: :post, remote: true %>
+            <% else %>
+              <%= link_to raw("<span class=\"likeinner\"><i class=\"icon-heart\"></i></span>"), signin_path %>
+            <% end %>
+            <span class='likecount'><%= product.users.count %></span>
+          </div>
+        </div>
+        <div class='spec'><span class='protitle'><%=link_to product.title, product_path(product) %></span><span class='proprice'><%= product.price %> ￥</span></div>
+      </div>
+    <% end %>
+  </div>
+  <%= javascript_include_tag "custom/product-like.js" %>
+</div>
 
-<% @products.each do |product| %>
-  <tr class='row'>
-    <td class='span4'><%= product.title %></td>
-    <td class='span3'><%= product.price %></td>
-    <td class='span1'><%= link_to 'Show', product %></td>
-    <td class='span1'><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td class='span1'><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Product', new_product_path %>

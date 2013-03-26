@@ -6,12 +6,11 @@ header {
 		position: relative;
 		background: transparent;
 		input[type="text"] {
-			width: 150px;
+			width: 180px;
 			padding: 5px 28px 6px 8px;
 			font-size:1em;
-			color: #666;
 			background: #e4e5e6;
-			background-color: #f2f2f3;
+			background-color: #fff;
 			-webkit-border-radius: 6px;
 			height:30px;
 		}
@@ -165,11 +164,6 @@ nav.menu ul.cogs-dropdown-menu {
 	right: 0;
 	z-index: 1000;
 	display: none;
-	float: left;
-	min-width: 160px;
-	padding: 5px 0;
-	margin: 2px 0 0;
-	list-style: none;
 	background-color: #ffffff;
 	border: 1px solid #ccc;
 	border: 1px solid rgba(0, 0, 0, 0.2);

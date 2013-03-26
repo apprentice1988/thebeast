@@ -1,3 +1,47 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.sign-row {
+	width: 665px;
+	margin: 0 auto 0;
+	padding-top: 21px;
+	clear: left;
+	.form-container {
+		padding: 4px;
+		background-color: #edede7;
+		-webkit-border-radius: 9px;
+		border-radius: 9px;
+		.form-container-inner {
+		border: 1px solid #dadcdc;
+		background-color: #fff;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		.heading {
+			background-color: #f2f2de;
+			padding: 4px;
+			width: auto;
+			border-top: 1px solid #fff;
+			moz-border-radius: 5px 5px 0 0;
+			-webkit-border-radius: 5px 5px 0 0;
+			border-radius: 5px 5px 0 0;
+		}
+		.log {
+			margin-top: 40px;
+			.input-prepend {
+				margin: auto 6px auto 6px;
+				input {
+					width: 200px;
+					height: 30px;
+			}
+			}
+			.log-submit {
+				margin-top: 40px;
+				input {
+				width:200px;
+				height: 35px;
+				}
+
+			
+		}
+		}
+		}
+	}
+}

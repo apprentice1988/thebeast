@@ -27,7 +27,7 @@
         </div>
         <ul class='cogs-dropdown-menu'>
           <li><a tabindex="-1" href="#"><i class="icon-pencil"></i>个人信息</a></li>
-          <li><%= link_to raw("<i class=\"i\"></i>退出"), signout_path %></li>
+          <li><%= link_to raw("<i class=\"i\"></i>退出"), signout_path, method: :delete %></li>
         </ul>
       </div>
       <% else %>
@@ -51,8 +51,9 @@
         <% end %>
       <% end %>
       <% if current_cart.nil? %>
+        <a href='#'>
         <div id="cart">
-          <i class='icon-shopping-cart icon-2x transparent'></i></div><div class='count'>0</div>
+          <i class='icon-shopping-cart icon-2x transparent'></i></div><div class='count'>0</div></a>
       <% else %>
         <%= link_to cart_path(current_cart) do %>
           <div id="cart">
@@ -61,5 +62,5 @@
       <% end %>
     </div>
   </nav>
-  <%= javascript_include_tag 'custom/menu-right.js' %>
+
 </div> 

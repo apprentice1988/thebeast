@@ -1,6 +1,7 @@
 class LineItemsController < ApplicationController
-  # GET /line_items
-  # GET /line_items.json
+
+  before_filter :admin_user, only: :index
+
   def index
     @line_items = LineItem.all
 
@@ -10,35 +11,7 @@ class LineItemsController < ApplicationController
     end
   end
 
-  # GET /line_items/1
-  # GET /line_items/1.json
-  def show
-    @line_item = LineItem.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @line_item }
-    end
-  end
-
-  # GET /line_items/new
-  # GET /line_items/new.json
-  def new
-    @line_item = LineItem.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @line_item }
-    end
-  end
-
-  # GET /line_items/1/edit
-  def edit
-
-  end
-
-  # POST /line_items
-  # POST /line_items.json
   def create
     if current_cart.nil?
       @cart = Cart.create(params[:cart])
@@ -60,22 +33,6 @@ class LineItemsController < ApplicationController
   end
    
 
-  # PUT /line_items/1
-  # PUT /line_items/1.json
-  def update
-    @line_item = LineItem.find(params[:id])
-
-    respond_to do |format|
-      if @line_item.update_attributes(params[:line_item])
-        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
-      else
-        format.html { redirect_to(:back) }
-      end
-    end
-  end
-
-  # DELETE /line_items/1
-  # DELETE /line_items/1.json
   def destroy
     @cart = current_cart
     @line_item = LineItem.find(params[:id])
@@ -86,4 +43,9 @@ class LineItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  private 
+    def admin_user
+      redirect_to root_path unless sign_in? && current_user.admin?
+    end
+
 end

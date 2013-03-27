@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
-  # GET /carts
-  # GET /carts.json
+
+  before_filter :correct_cart, only: :show
+  before_filter :admin_user, only: [:index, :edit, :destroy]
   def index
     @carts = Cart.all
 
@@ -59,24 +60,6 @@ class CartsController < ApplicationController
     end
   end
 
-  # PUT /carts/1
-  # PUT /carts/1.json
-  def update
-    @cart = Cart.find(params[:id])
-
-    respond_to do |format|
-      if @cart.update_attributes(params[:cart])
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @cart.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /carts/1
-  # DELETE /carts/1.json
   def destroy
     @cart = current_user.cart
     @cart.line_items.delete
@@ -86,4 +69,14 @@ class CartsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+    def correct_cart
+      redirect_to root_path unless current_cart == Cart.find(params[:id])
+
+    end
+
+    def admin_user
+      redirect_to root_path unless sign_in? && current_user.admin?
+    end
 end

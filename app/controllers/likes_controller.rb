@@ -1,4 +1,6 @@
 class LikesController < ApplicationController
+
+	before_filter :correct_user, only: :destroy
 	def show
 		if sign_in?
 			@likes = Like.where("user_id = ?", current_user.id)
@@ -29,4 +31,10 @@ class LikesController < ApplicationController
 			format.html{ redirect_to(:back)}
 		end
 	end
+
+	private
+		def correct_user
+			@user = User.find[params[:id]]
+			redirect_to root_path unless current_user?(@user)
+		end
 end

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  # GET /products
-  # GET /products.json
+  before_filter :admin_user, only: [:new, :edit, :update, :destroy, :create]
+
   def index
     @search = Product.search do 
       fulltext params[:search]
@@ -81,4 +81,9 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+    def admin_user
+      redirect_to root_path unless sign_in? && current_user.admin?
+    end
 end

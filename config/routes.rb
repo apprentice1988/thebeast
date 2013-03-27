@@ -1,9 +1,9 @@
 Thebeast::Application.routes.draw do
   
-  resources :line_items
+  resources :line_items, only: [:index, :create, :destroy]
 
 
-  resources :carts
+  resources :carts, only: [:index, :edit, :show, :create, :destroy]
 
 
   resources :products
@@ -13,7 +13,7 @@ Thebeast::Application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :likes
+  resources :likes, only: [:show, :create, :destroy]
 
   root :to => 'static_pages#home'
 
@@ -32,8 +32,6 @@ Thebeast::Application.routes.draw do
   match 'cancelapplication' => "accounts#cancelapplication"
 
   match "signup" => 'users#new'
-
-  match "like" => 'users#like'
 
   match 'faq' => 'help_pages#faq'
 
@@ -58,8 +56,6 @@ Thebeast::Application.routes.draw do
   match 'clothes' => "static_pages#clothes"
 
   match 'grocery' => "static_pages#grocery"
-
-  match 'gift' => "static_pages#gift"
 
   match 'cooperation' => "static_pages#cooperation"
 

@@ -18,10 +18,11 @@
             <span class='likecount'><%= product.users.count %></span>
           </div>
         </div>
-        <div class='spec'><span class='protitle'><%=link_to product.title, product_path(product) %></span><span class='proprice'><%= product.price %> ￥</span></div>
+        <div class='spec'><span class='protitle'><%=link_to product.title, product_path(product) %></span><span class='proprice'><%= product.price %> ￥</span>
+        </div>
       </div>
     <% end %>
   </div>
-  <%= javascript_include_tag "custom/product-like.js" %>
+  <%= javascript_include_tag "product_like.js" %>
 </div>
 

@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(:version => 20130323020039) do
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.integer  "price",       :limit => 8
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.decimal  "price",       :precision => 8, :scale => 0
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "photo_url"
     t.string   "image_url1"
     t.string   "image_url2"

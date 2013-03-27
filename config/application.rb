@@ -65,5 +65,6 @@ module Thebeast
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.assets.precompile << 'product_like.js.coffee'
   end
 end

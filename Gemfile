@@ -42,10 +42,13 @@ end
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+ gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'mime-types'

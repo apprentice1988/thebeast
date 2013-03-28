@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-    @img = [@product.image_url1, @product.image_url2, @product.image_url3, @product.image_url4].select {|x| !x.blank? }
+    @img = [@product.image_url, @product.image_url1, @product.image_url2, @product.image_url3, @product.image_url4].select {|x| !x.blank? }
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }

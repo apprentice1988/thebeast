@@ -1,4 +1,4 @@
-namespage :db do 
+namespace :db do 
 	desc "Fill database with sample data"
 	task populate: :environment do 
 		admin = User.create!(username: "jizilong",

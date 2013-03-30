@@ -76,6 +76,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.21)
     multi_json (1.6.1)
+    nested_form (0.3.1)
     nokogiri (1.5.6)
     pg (0.11.0)
     polyglot (0.3.3)
@@ -182,6 +183,7 @@ DEPENDENCIES
   jquery-rails
   less-rails
   mime-types
+  nested_form
   pg
   rails (= 3.2.12)
   rmagick

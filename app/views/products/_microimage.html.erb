@@ -1,5 +1,5 @@
 <ul id="imgList">
-<% @img.each do |microimage| %>
-	<li class='microimage'><%= image_tag microimage %></li>
+<% for image in @product.images %>
+	<li class='microimage'><%= image_tag image.image_url %></li>
 <% end %>
 </ul>

@@ -6,7 +6,7 @@
 					<div class='photo'>
 						<%= link_to(product_path(product)) do %>
 							<% @id = product.id %>
-							<%= image_tag(product.photo_url, :id => @id) %>	
+							<%= image_tag(product.images[0].image_url, :id => @id) %>	
 						<% end %>
 					</div>
 					<div class='like'>

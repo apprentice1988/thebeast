@@ -52,3 +52,4 @@ end
 gem 'carrierwave'
 gem 'rmagick'
 gem 'mime-types'
+gem 'nested_form'

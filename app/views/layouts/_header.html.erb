@@ -20,18 +20,18 @@
       <li><%= link_to "帮助中心", faq_path %></li>
     </ul>
     <div class='right'>
-      <% if sign_in? %>
+      <% if signed_in? %>
       <div class='cogs'>
         <div id ='signout'>
           <a class='dropdown-toggle' data-toggle = "dropdown" href='#'><i class = 'icon-cogs icon-2x transparent'></i></a>
         </div>
         <ul class='cogs-dropdown-menu'>
           <li><a tabindex="-1" href="#"><i class="icon-pencil"></i>个人信息</a></li>
-          <li><%= link_to raw("<i class=\"i\"></i>退出"), signout_path, method: :delete %></li>
+          <li><%= link_to raw("<i class=\"i\"></i>退出"), destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
       <% else %>
-        <%= link_to signin_path do %>
+        <%= link_to new_user_session_path do %>
           <div id='signin'>
             <i class = 'icon-signin icon-2x transparent'></i>
           </div>
@@ -44,7 +44,7 @@
           </div>
         <% end %>
       <% else %>
-        <%= link_to signin_path do %>
+        <%= link_to new_user_session_path do %>
           <div class='heart'>
             <i class='icon-heart icon-2x transparent'></i>
           </div>

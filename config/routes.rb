@@ -1,5 +1,7 @@
 Thebeast::Application.routes.draw do
   
+  devise_for :users
+
   resources :line_items, only: [:index, :create, :destroy]
 
 

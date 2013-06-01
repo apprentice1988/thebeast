@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.12'
 gem 'sunspot_rails'
@@ -10,6 +10,7 @@ gem 'devise'
 group :development, :test do
 	gem 'sqlite3'
 	gem 'rspec-rails'
+  gem 'better_errors'
 end
 
 # Gems used only for assets and not required
@@ -44,6 +45,7 @@ end
 
 # Use unicorn as the app server
  gem 'unicorn'
+ gem 'qiniu-rs'
 
 # Deploy with Capistrano
 # gem 'capistrano'

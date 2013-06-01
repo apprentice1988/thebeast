@@ -23,7 +23,8 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
-  <%= f.fields_for :images do |builder| %>
+  <%= f.fields_for :images,method: "post", action:"http://up.qiniu.com/", enctype: "multipart/form-data" do |builder| %>
+    <input name="token" type = "hidden" value="#{@uploadtoken}">
     <%= builder.file_field :image %><br />
   <% end %>
   <div class="field">

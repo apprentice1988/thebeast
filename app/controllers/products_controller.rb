@@ -28,6 +28,7 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
+    @uploadtoken = Qiniu::RS.generate_upload_token
     4.times { @product.images.build }
     respond_to do |format|
       format.html # new.html.erb

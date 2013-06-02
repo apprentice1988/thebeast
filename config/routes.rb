@@ -1,8 +1,12 @@
 Thebeast::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   root to: 'static_pages#home'
   
   devise_for :users, :controller => {registrations: "registrations"}
+  ActiveAdmin.routes(self)
 
   resources :line_items, only: [:index, :create, :destroy]
 

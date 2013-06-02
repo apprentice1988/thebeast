@@ -4,6 +4,7 @@ gem 'rails', '3.2.12'
 gem 'sunspot_rails'
 gem 'sunspot_solr' #rake sunspot:solr:start
 gem 'devise'
+gem 'activeadmin'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

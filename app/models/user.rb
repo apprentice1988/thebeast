@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   has_many :likes, dependent: :destroy
   has_many :products, through: :likes
 
-  has_secure_password
+  #has_secure_password
 
   before_save { |user| user.email.downcase! }
   before_save :create_remember_token

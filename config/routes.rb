@@ -1,6 +1,8 @@
 Thebeast::Application.routes.draw do
+
+  root to: 'static_pages#home'
   
-  devise_for :users
+  devise_for :users, :controller => {registrations: "registrations"}
 
   resources :line_items, only: [:index, :create, :destroy]
 
@@ -13,15 +15,13 @@ Thebeast::Application.routes.draw do
 
   resources :users
 
-  resources :sessions, only: [:new, :create, :destroy]
+  #resources :sessions, only: [:new, :create, :destroy]
 
   resources :likes, only: [:show, :create, :destroy]
 
-  root :to => 'static_pages#home'
+  #match 'signin' => 'sessions#new'
 
-  match 'signin' => 'sessions#new'
-
-  match 'signout' => 'sessions#destroy', via: :delete
+  #match 'signout' => 'sessions#destroy', via: :delete
 
   match 'deliveraddress' => "accounts#deliveraddress"
 

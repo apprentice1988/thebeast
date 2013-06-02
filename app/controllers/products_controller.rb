@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :admin_user, only: [:new, :edit, :update, :destroy, :create]
+  #before_filter :admin_user, only: [:new, :edit, :update, :destroy, :create]
 
   def index
     @search = Product.search do 

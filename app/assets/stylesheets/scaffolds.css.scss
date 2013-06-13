@@ -4,8 +4,7 @@ overflow-y: scroll;
 font-family: MuseoSans,Georgia,"Times New Roman",Times,serif;
 font-size: 0.5em;
 color: #444;
-border-top: 3px solid #444;
-background-color: #f2f2de;
+background-color: #fff;
 overflow-x: hidden;
 diaplay: block;
 }
@@ -125,12 +124,6 @@ div {
   height: 25px;
   color: #d9666f;
 
-  a:hover {
-    span.likeinner {
-    background: #d9666f;
-    color: #fff;
-    }
-    }
   span.likeinner {
     border-radius: 15px;
     background: #fff;

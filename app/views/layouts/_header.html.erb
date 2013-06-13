@@ -1,42 +1,64 @@
 <header>
-  <%= image_tag("logo.jpg", :size => "240x150") %>
-  <%= form_tag products_path, :method => :get do %>
-    <p>
-      <%= text_field_tag :search, params[:search], :class => "input-medium search-query" %>
-      <%= submit_tag "Search", :name => nil, :id => 'submit' %>
-    </p>
-  <% end %>  
-</header>
-<div class='wrapper'>
-  <nav class='menu'>
-    <ul class='left'>
-      <li><%= link_to "首页", root_path%></li>
-      <li><%= link_to "最新产品", newproduct_path%></li> 
-      <li><%= link_to "野兽派花店", beastflower_path %></li> 
-      <li><%= link_to "香氛沙龙", fragrance_path %></li> 
-      <li><%= link_to "服饰配件", clothes_path %></li> 
-      <li><%= link_to "杂货铺", grocery_path %></li> 
-      <li><%= link_to "特别合作", cooperation_path %></li>
-      <li><%= link_to "帮助中心", faq_path %></li>
+  <div id="meta-group">
+    <ul id="user-nav">
+      <li><%= link_to "当卖家", "#" %></li>
+      <li><%= link_to "报名", "#" %></li>
+      <li><%= link_to "社区", "#" %></li>
+      <li><%= link_to "博客", "#" %></li>
     </ul>
-    <div class='right'>
-      <% if signed_in? %>
-      <div class='cogs'>
-        <div id ='signout'>
-          <a class='dropdown-toggle' data-toggle = "dropdown" href='#'><i class = 'icon-cogs icon-2x transparent'></i></a>
-        </div>
-        <ul class='cogs-dropdown-menu'>
-          <li><a tabindex="-1" href="#"><i class="icon-pencil"></i>个人信息</a></li>
-          <li><%= link_to raw("<i class=\"i\"></i>退出"), destroy_user_session_path, method: :delete %></li>
-        </ul>
-      </div>
-      <% else %>
-        <%= link_to new_user_session_path do %>
-          <div id='signin'>
-            <i class = 'icon-signin icon-2x transparent'></i>
+    <ul id="meta-nav">
+      <li><%= link_to "HI!", "#" %></li>
+      <li><%= link_to "你的铺子", "#" %></li>
+      <li><%= link_to "账户", "#" %></li>
+      <li><%= link_to "帮助", "#" %></li>
+    </ul>
+  </div>
+  <div id="navigation-group">
+      <% if user_signed_in? %>
+        <div class='cogs'>
+          <div id ='signout'>
+            <a class='dropdown-toggle' data-toggle = "dropdown" href='#'><i class = 'icon-cogs icon-2x transparent'></i></a>
           </div>
+          <ul class='cogs-dropdown-menu'>
+            <li><a tabindex="-1" href="#"><i class="icon-pencil"></i>个人信息</a></li>
+            <li><%= link_to raw("<i class=\"i\"></i>退出"), destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div>
+      <% else %>
+        <%= link_to root_path do %>
+          <%= image_tag("logo2.jpg", :size=>"55x55") %>
+        <% end %>
+        <ul class="main-nav">
+          <li class="register-link"> <%= link_to "注册", new_user_registration_path %> </li>
+          <li class="sign-in-link"><%= link_to "登录", new_user_session_path  %> </li>
+          <li class="search-query-form">
+            <%= form_tag products_path, :method => :get do %>
+              <p>
+                <%= text_field_tag :search, params[:search], :class => "input-medium search-query" %>
+                <%= submit_tag "搜一下", :name => nil, :id => 'submit' %>
+              </p>
+            <% end %>
+          </li>
+
+        <% if current_cart.nil? %>
+          <a href='#'>
+            <div id="cart">
+              <i class='icon-shopping-cart icon-2x transparent' style="margin-top:12px;margin-left:16px"></i>
+              <span class='count'>0</span>
+              <small>购物车</small>
+            </div>
+          </a>
+        <% else %>
+          <%= link_to cart_path(current_cart) do %>
+            <div id="cart">
+              <i class='icon-shopping-cart icon-2x transparent'></i>
+            </div>
+            <div class='count'><%= current_cart.line_items.count %></div>
+          <% end %>
         <% end %>
       <% end %>
+
+      <!--
       <% if current_user %>
         <%= link_to like_path(current_user) do %>
           <div class='heart'>
@@ -60,7 +82,25 @@
           <i class='icon-shopping-cart icon-2x transparent'></i></div><div class='count'><%= current_cart.line_items.count %></div>
         <% end %>
       <% end %>
-    </div>
+    -->
+  </div>
+</header>
+<!--
+  
+</header>
+<div class='wrapper'>
+  <nav class='menu'>
+    <ul class='left'>
+      <li><%#= link_to "首页", root_path%></li>
+      <li><%#= link_to "最新产品", newproduct_path%></li> 
+      <li><%#= link_to "野兽派花店", beastflower_path %></li> 
+      <li><%#= link_to "香氛沙龙", fragrance_path %></li> 
+      <li><%#= link_to "服饰配件", clothes_path %></li> 
+      <li><%#= link_to "杂货铺", grocery_path %></li> 
+      <li><%#= link_to "特别合作", cooperation_path %></li>
+      <li><%#= link_to "帮助中心", faq_path %></li>
+    </ul>
+    
   </nav>
 
 </div> 

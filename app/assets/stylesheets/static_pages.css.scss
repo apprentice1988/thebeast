@@ -1,36 +1,5 @@
 /* nav menu */
-header {
-	form{
-		float: right;
-		margin: 40px 60px 0 20px;
-		position: relative;
-		background: transparent;
-		input[type="text"] {
-			width: 180px;
-			padding: 5px 28px 6px 8px;
-			font-size:1em;
-			background: #e4e5e6;
-			background-color: #fff;
-			-webkit-border-radius: 6px;
-			height:30px;
-		}
-		input[type="submit"] {
-			border: none;
-			padding: 0;
-			margin: 0;
-			background: url("ico_sidebar_search.png") no-repeat top left;
-			height: 16px;
-			width: 16px;
-			text-indent: -9000px;
-			overflow: hidden;
-			position: absolute;
-			top: 7px;
-			float: right;
-			right:  5px;
 
-		}
-	}
-}
 
 div.wrapper {
 	font-size: 1.3em;
@@ -84,9 +53,6 @@ div.wrapper {
   }
 }
 
-nav.menu ul li a:hover {
- color: #bf3730;
-}
 
 
 nav.menu ul li a {

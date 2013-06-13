@@ -13,11 +13,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <%= render 'layouts/header' %>
-  <%= yield %>
-  <footer>
-    <%= render 'layouts/footer' %>
-  </footer>
+    <div class=" offset1">
+      <%= render 'layouts/header' %>
+      <%= yield %>
+      <footer>
+        <%= render 'layouts/footer' %>
+      </footer>
+    </div>
    <%= debug(params) if Rails.env.development? %>
   <%= javascript_include_tag 'menu_right' %>
 </body>

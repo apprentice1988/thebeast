@@ -1,0 +1,137 @@
+
+div#meta-group {
+	display:block;
+	margin-bottom: -5px;
+	a:hover {
+	color:#0192b5;
+	}
+}
+ul#user-nav {
+	display:inline;
+	margin: 0 0 10px 0;
+}
+ul#meta-nav {
+	float:right;
+	margin: 0 0 10px 0;
+}
+div#meta-group li {
+	display:inline;
+	margin-right: 15px;
+}
+
+
+ul.main-nav {
+	margin: 0 0 10px 0;
+	position:absolute;
+	left: 230px;
+	top:42px;
+	height: 48px;
+	width:790px;
+	background-image:
+	-webkit-gradient(linear,left bottom,left top,color-stop(0.25,#cbcbc5),color-stop(0.76,#ddddd8),color-stop(0.98,#eeeeec),color-stop(1,#e7e7e4));
+
+	background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.25,#cbcbc5),color-stop(0.76,#ddddd8),color-stop(0.98,#eeeeec),color-stop(1,#e7e7e4));
+
+	background-image: -moz-linear-gradient(center bottom,#cbcbc5 25%,#ddddd8 76%,#eeeeec 98%,#e7e7e4 100%);
+
+	background-image: -ms-linear-gradient(center bottom,#cbcbc5 25%,#ddddd8 76%,#eeeeec 98%,#e7e7e4 100%);
+
+	background-image: -o-linear-gradient(center bottom,#cbcbc5 25%,#ddddd8 76%,#eeeeec 98%,#e7e7e4 100%);
+	
+	background-image: linear-gradient(center bottom,#cbcbc5 25%,#ddddd8 76%,#eeeeec 98%,#e7e7e4 100%);
+}
+ul.main-nav li {
+	display:inline;
+	a {
+		width: auto;
+		padding: 16px 24px 16px 24px;
+		font-weight: bold;
+		line-height: 48px;
+		height: 50px;
+		border-right: 1px solid #fff;
+		&:hover {
+			color:#0192b5;
+			text-decoration: none;
+			background-color:#d7d7d1;
+
+		  background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.25,#b7b8b0),color-stop(0.76,#ddddd8),color-stop(0.98,#f7f7f6),color-stop(1,#e7e7e4));
+
+		  background-image:-webkit-linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+
+		  background-image:-moz-linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+
+		  background-image:-ms-linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+
+		  background-image:-o-linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+
+		  background-image:linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+
+		}
+	}
+}
+div#navigation-group li.search-query-form {
+	position:relative;
+	left: 200px;
+	top:-35px;
+	input[type="submit"] {
+		width: 80px;
+		height: 24px;
+		padding-top: 0px;
+		&:hover {
+			text-decoration: none;
+			background-color:#d7d7d1;
+
+			background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.25,#b7b8b0),color-stop(0.76,#ddddd8),color-stop(0.98,#f7f7f6),color-stop(1,#e7e7e4));
+
+		  background-image:-webkit-linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+
+		  background-image:-moz-linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+
+		  background-image:-ms-linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+
+		  background-image:-o-linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+
+		  background-image:linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+		}
+	}
+}
+div#navigation-group div#cart {
+	width:100px;
+	height: 48px;
+	position:absolute;
+	top: 0px;
+	left:791px;
+	background-image:
+	-webkit-gradient(linear,left bottom,left top,color-stop(0.25,#cbcbc5),color-stop(0.76,#ddddd8),color-stop(0.98,#eeeeec),color-stop(1,#e7e7e4));
+
+	background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.25,#cbcbc5),color-stop(0.76,#ddddd8),color-stop(0.98,#eeeeec),color-stop(1,#e7e7e4));
+
+	background-image: -moz-linear-gradient(center bottom,#cbcbc5 25%,#ddddd8 76%,#eeeeec 98%,#e7e7e4 100%);
+
+	background-image: -ms-linear-gradient(center bottom,#cbcbc5 25%,#ddddd8 76%,#eeeeec 98%,#e7e7e4 100%);
+
+	background-image: -o-linear-gradient(center bottom,#cbcbc5 25%,#ddddd8 76%,#eeeeec 98%,#e7e7e4 100%);
+	
+	background-image: linear-gradient(center bottom,#cbcbc5 25%,#ddddd8 76%,#eeeeec 98%,#e7e7e4 100%);
+	&:hover {
+		color:#0192b5;
+		text-decoration: none;
+		background-color:#d7d7d1;
+
+		background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.25,#b7b8b0),color-stop(0.76,#ddddd8),color-stop(0.98,#f7f7f6),color-stop(1,#e7e7e4));
+
+	  background-image:-webkit-linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+
+	  background-image:-moz-linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+
+	  background-image:-ms-linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+
+	  background-image:-o-linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+
+	  background-image:linear-gradient(center bottom,#b7b8b0 25%,#ddddd8 76%,#f7f7f6 98%,#e7e7e4 100%);
+	}
+	span.count {
+		position:relative;
+		top:-12px;
+	}
+}
